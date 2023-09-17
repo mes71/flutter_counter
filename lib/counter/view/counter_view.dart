@@ -27,6 +27,7 @@ class CounterView extends StatelessWidget {
             child: const Icon(Icons.add),
             onPressed: () => CounterCubit.to(context).increment(),
           ),
+          const SizedBox(height: 15,),
           FloatingActionButton(
             key: const Key('counterView_decrement_floatingActionButton'),
             child: const Icon(Icons.remove),
