@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_counter/counter/cubit/counter_cubit.dart';
 
+const incrementButtonKey = Key('counterView_increment_floatingActionButton');
+const decrementButtonKey = Key('counterView_decrement_floatingActionButton');
+
 class CounterView extends StatelessWidget {
   const CounterView({super.key});
 
@@ -23,13 +26,15 @@ class CounterView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           FloatingActionButton(
-            key: const Key('counterView_increment_floatingActionButton'),
+            key: incrementButtonKey,
             child: const Icon(Icons.add),
             onPressed: () => CounterCubit.to(context).increment(),
           ),
-          const SizedBox(height: 15,),
+          const SizedBox(
+            height: 15,
+          ),
           FloatingActionButton(
-            key: const Key('counterView_decrement_floatingActionButton'),
+            key: decrementButtonKey,
             child: const Icon(Icons.remove),
             onPressed: () => CounterCubit.to(context).decrement(),
           ),
